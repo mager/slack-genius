@@ -38,7 +38,7 @@ app.post('/post', function(req, res){
 
       body = {
         response_type: "in_channel",
-        text: "Here is a hardcoded result (test): " + first_url
+        text: first_url
       };
       res.send(body);
 
