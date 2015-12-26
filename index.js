@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-
+var url = require('url');
 
 app.set('port', (process.env.PORT || 9001));
 
@@ -20,7 +20,20 @@ app.get('/', function(req, res) {
 });
 
 app.post('/post', function(req, res){
-  console.log(req.body);
+  var parsed_url = url.format({
+    pathname: 'https://api.genius.com/search',
+    query: {
+      access_token: PROCESS.env.GENIUS_ACCESS,
+      q: 'Kendrick Lamar'
+    }
+  });
+
+  request(, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body) // Show the HTML for the Google homepage.
+    }
+  })
+
   body = {
     response_type: "in_channel",
     text: "I am a Slackbot. Everyone in the channel can see this message."
