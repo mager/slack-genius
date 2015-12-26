@@ -1,24 +1,13 @@
 var express = require('express');
 var app = express();
-
 var bodyParser = require('body-parser');
 var url = require('url');
 var request = require('request');
 
 app.set('port', (process.env.PORT || 9001));
 
-app.use(express.static(__dirname + '/public'));
-
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(req, res) {
-  res.render('pages/index');
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/post', function(req, res){
 
@@ -32,11 +21,10 @@ app.post('/post', function(req, res){
 
   request(parsed_url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log('success');
       var data = JSON.parse(body);
       var first_url = data.response.hits[0].result.url;
 
-      body = {
+      var body = {
         response_type: "in_channel",
         text: first_url
       };
