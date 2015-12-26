@@ -21,6 +21,9 @@ app.get('/', function(req, res) {
 });
 
 app.post('/post', function(req, res){
+  console.log('request: ' + req.body.text);
+
+/*
   var parsed_url = url.format({
     pathname: 'https://api.genius.com/search',
     query: {
@@ -42,7 +45,8 @@ app.post('/post', function(req, res){
       res.send(body);
 
     }
-  })
+  });
+  */
 
 
 });
