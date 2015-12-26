@@ -8,6 +8,7 @@ In this tutorial, I'll show you how to make a Slackbot that receives input throu
 
 * Clone the repo and then install dependencies:
 
+
     git clone git@github.com:mager/slack-genius.git
     cd slack-genius
     npm i
@@ -17,8 +18,10 @@ In this tutorial, I'll show you how to make a Slackbot that receives input throu
 
 * Setup the server (I used Heroku):
 
+
     heroku create my-slackbot
     heroku config:add GENIUS_ACCESS=[your Genius access token]
+
 
 * Setup Slack slash command
   * Goto `http://[your-slack-team].slack.com/apps/manage/custom-integrations` and add a slash command.
