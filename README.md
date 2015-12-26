@@ -16,7 +16,11 @@ Clone the repo and then install dependencies:
 Setup the server (I used Heroku):
 
     heroku create my-slackbot
-    heroku config:add GENIUS_ACCESS=[\[your Genius access token\]](https://genius.com/api-clients)
+
+
+Set env variable with [Genius access token](https://genius.com/api-clients):
+
+    heroku config:add GENIUS_ACCESS=[your Genius access token]
 
 
 Setup Slack slash command:
