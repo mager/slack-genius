@@ -21,14 +21,12 @@ app.get('/', function(req, res) {
 });
 
 app.post('/post', function(req, res){
-  console.log('request: ' + req.body.text);
 
-/*
   var parsed_url = url.format({
     pathname: 'https://api.genius.com/search',
     query: {
       access_token: process.env.GENIUS_ACCESS,
-      q: 'Kendrick Lamar'
+      q: req.body.text
     }
   });
 
@@ -46,8 +44,6 @@ app.post('/post', function(req, res){
 
     }
   });
-  */
-
 
 });
 
