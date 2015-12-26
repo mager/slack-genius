@@ -31,15 +31,20 @@ app.post('/post', function(req, res){
 
   request(parsed_url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log(body) // Show the HTML for the Google homepage.
+      console.log('success');
+      var data = JSON.parse(body);
+      var first_url = data.response.hits[0].result.url;
+
+      body = {
+        response_type: "in_channel",
+        text: "Here is a hardcoded result" + first_url
+      };
+      res.send(body);
+
     }
   })
 
-  body = {
-    response_type: "in_channel",
-    text: "I am a Slackbot. Everyone in the channel can see this message."
-  };
-  res.send(body);
+
 });
 
 app.listen(app.get('port'), function() {
