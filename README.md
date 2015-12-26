@@ -6,16 +6,16 @@ In this tutorial, I'll show you how to make a Slackbot that receives input throu
 
 ## Installation
 
-Clone the repo and then install dependencies:
+* Clone the repo and then install dependencies:
 
     git clone git@github.com:mager/slack-genius.git
     cd slack-genius
     npm i
 
 
-Get an access token from Genius:
-
-`https://api.genius.com/oauth/authorize?client_id=&redirect_uri=&response_type=code`
+* [Get an access token from Genius](https://genius.com/api-clients)
+* Set local & Heroku variables:
+    heroku config:add GENIUS_ACCESS=[your access token]
 
 <!-- TODO: Add more here -->
 
