@@ -13,11 +13,22 @@ In this tutorial, I'll show you how to make a Slackbot that receives input throu
     npm i
 
 
-* [Get an access token from Genius](https://genius.com/api-clients)
-* Set local & Heroku variables:
-    heroku config:add GENIUS_ACCESS=[your access token]
+* [Get an `access_token` from Genius](https://genius.com/api-clients)
 
-<!-- TODO: Add more here -->
+* Setup the server (I used Heroku):
+    heroku create my-slackbot
+    heroku config:add GENIUS_ACCESS=[your Genius access token]
+
+* Setup Slack slash command
+  * Goto http://[your-slack-team].slack.com/apps/manage/custom-integrations and add a slash command.
+  * Fill in the fields:
+    * Command: the name of your slash command (ex: `/genius`)
+    * URL: The URL to request when the slash command is run (ex: `https://my-slackbot.herokuapp.com/post`)
+    * Method: POST
+    * Customize Name: The name of your Slackbot
+    * Customize Icon: A custom icon or an emoji
+    * Autocomplete help text: Helps users when they start typing `/`
+    * Descriptive Label: Provides extra context
 
 
 ## Usage
