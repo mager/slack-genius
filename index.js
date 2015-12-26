@@ -3,6 +3,7 @@ var app = express();
 
 var bodyParser = require('body-parser');
 var url = require('url');
+var request = require('request');
 
 app.set('port', (process.env.PORT || 9001));
 
@@ -23,12 +24,12 @@ app.post('/post', function(req, res){
   var parsed_url = url.format({
     pathname: 'https://api.genius.com/search',
     query: {
-      access_token: PROCESS.env.GENIUS_ACCESS,
+      access_token: process.env.GENIUS_ACCESS,
       q: 'Kendrick Lamar'
     }
   });
 
-  request(, function (error, response, body) {
+  request(parsed_url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       console.log(body) // Show the HTML for the Google homepage.
     }
