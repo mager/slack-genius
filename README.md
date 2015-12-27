@@ -13,13 +13,15 @@ Clone the repo and then install dependencies:
     npm i
 
 
-Setup the server (I used Heroku):
+Setup the server locally (I used Heroku):
 
     heroku create my-slackbot
+    heroku local web
 
 
 Set env variable with [Genius access token](https://genius.com/api-clients):
 
+    export GENIUS_ACCESS=[your Genius access token]
     heroku config:add GENIUS_ACCESS=[your Genius access token]
 
 

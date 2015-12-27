@@ -9,8 +9,11 @@ app.set('port', (process.env.PORT || 9001));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/post', function(req, res){
+app.get('/', function(req, res){
+  res.send('It worked!');
+});
 
+app.post('/post', function(req, res){
   var parsed_url = url.format({
     pathname: 'https://api.genius.com/search',
     query: {
@@ -32,9 +35,6 @@ app.post('/post', function(req, res){
       res.send(body);
     }
   });
-
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+app.listen(app.get('port'));
