@@ -7,6 +7,7 @@ var request = require('request');
 app.set('port', (process.env.PORT || 9001));
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/post', function(req, res){
 
