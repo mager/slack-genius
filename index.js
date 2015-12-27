@@ -1,9 +1,12 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var url = require('url');
 var request = require('request');
 
 app.set('port', (process.env.PORT || 9001));
+
+app.use(bodyParser.json());
 
 app.post('/post', function(req, res){
 
@@ -24,6 +27,7 @@ app.post('/post', function(req, res){
         response_type: "in_channel",
         text: first_url
       };
+
       res.send(body);
     }
   });
