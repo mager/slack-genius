@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
 var url = require('url');
 var request = require('request');
 
-app.set('port', (process.env.PORT || 9001));
-
+var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('port', (process.env.PORT || 9001));
 
 app.get('/', function(req, res){
   res.send('It works!');
