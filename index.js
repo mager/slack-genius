@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
-  res.send('It worked!');
+  res.send('It works!');
 });
 
 app.post('/post', function(req, res){
