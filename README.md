@@ -20,10 +20,8 @@ Setup the server locally (I used Heroku):
 
 Visit [http://localhost:5000](http://localhost:5000) and you should see "It works!".
 
-Set local and Heroku environment variable for [Genius access token](https://genius.com/api-clients):
+Set Heroku environment variable for [Genius access token](https://genius.com/api-clients):
 
-    export GENIUS_ACCESS=[your Genius access token]
-    # Heroku
     heroku config:add GENIUS_ACCESS=[your Genius access token]
 
 
