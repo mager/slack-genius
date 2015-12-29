@@ -1,8 +1,10 @@
 # Slack Genius
 
-_A Slackbot that searches genius.com_
+_A Slackbot that searches genius.com_.
 
 This Slackbot that receives input through a [slash command](https://api.slack.com/slash-commands) and sends a request to an API.
+
+A detailed tutorial about how I built this is on Medium: [https://goo.gl/wDyayI](https://goo.gl/wDyayI)
 
 ## Installation
 
@@ -13,16 +15,15 @@ Clone the repo and then install dependencies:
     npm i
 
 
-Setup the server locally (I used Heroku):
+Setup the server (I used Heroku):
 
     heroku create my-slackbot
-    heroku local web
 
-Visit [http://localhost:5000](http://localhost:5000) and you should see "It works!".
 
 Set Heroku environment variable for [Genius access token](https://genius.com/api-clients):
 
     heroku config:add GENIUS_ACCESS=[your Genius access token]
+    git push heroku master
 
 
 Setup Slack slash command:
