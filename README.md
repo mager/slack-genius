@@ -2,6 +2,8 @@
 
 _A Slackbot that searches genius.com_.
 
+![](https://cdn-images-1.medium.com/max/1200/1*dK--YUKXxeLgSuddFUlRWQ.png)
+
 This Slackbot that receives input through a [slash command](https://api.slack.com/slash-commands) and sends a request to an API.
 
 A detailed tutorial about how I built this is on Medium: [https://goo.gl/wDyayI](https://goo.gl/wDyayI)
