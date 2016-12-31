@@ -15,10 +15,9 @@ app.get('/', function(req, res){
 
 app.post('/post', function(req, res){
   var parsed_url = url.format({
-    pathname: 'https://api.genius.com/search',
+    pathname: 'https://documentation.powerreviews.com/rest/api/content/search',
     query: {
-      access_token: process.env.GENIUS_ACCESS,
-      q: req.body.text
+      cql: "text~'" + req.body.text + "'"
     }
   });
 
@@ -27,7 +26,7 @@ app.post('/post', function(req, res){
       var data = JSON.parse(body);
       var first_url = data.response.hits[0].result.url;
 
-      var body = {
+      body = {
         response_type: "in_channel",
         text: first_url
       };
@@ -38,5 +37,4 @@ app.post('/post', function(req, res){
 });
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+  console.log('Node app is running on port', app.get('port')); });
