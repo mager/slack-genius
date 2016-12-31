@@ -1,4 +1,4 @@
-# Slack Genius
+# Slack Confluence
 
 _A Slackbot that searches genius.com_.
 
